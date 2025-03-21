@@ -5,15 +5,29 @@ const Button = ({
     textColor,
     borderColor,
     fullWidth,
+    onClick,
+    size = "default"
   }) => {
+    const getSizeClasses = () => {
+      switch (size) {
+        case "small":
+          return "px-5 py-2 text-base";
+        case "large":
+          return "px-8 py-5 text-xl";
+        default:
+          return "px-7 py-4 text-lg";
+      }
+    };
+
     return (
       <button
-        className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none
+        onClick={onClick}
+        className={`flex justify-center items-center gap-2 ${getSizeClasses()} border font-montserrat leading-none
         ${
           backgroundColor
             ? `${backgroundColor} ${textColor} ${borderColor}`
             : "bg-coral-red text-white border-coral-red"
-        } rounded-full ${fullWidth && "w-full"}`}
+        } rounded-full ${fullWidth ? "w-full" : ""} hover:opacity-90 transition-all duration-300 active:scale-95`}
       >
         {label}
   

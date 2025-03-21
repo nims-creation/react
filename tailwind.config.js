@@ -29,15 +29,44 @@ export default {
         "white-400": "rgba(255, 255, 255, 0.80)"
       },
       boxShadow: {
-        '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)'
+        '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)',
+        'card': '0 4px 8px rgba(0, 0, 0, 0.1)'
       },
       backgroundImage: {
         'hero': "url('assets/images/collection-background.svg')",
         'card': "url('assets/images/thumbnail-background.svg')",
       },
       screens: {
+        'xs': '480px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
         "wide": "1440px"
-      }
+      },
+      transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.8s ease-in-out',
+        'slide-in': 'slideIn 0.9s ease-in-out',
+        'float': 'float 3s ease-in-out infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideIn: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
     },
   },
   plugins: [],
