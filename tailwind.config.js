@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     fontSize: {
       xs: ['12px', '16px'],
@@ -22,11 +23,27 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
       },
       colors: {
-        'primary': "#ECEEFF",
-        "coral-red": "#FF6452",
-        "slate-gray": "#6D6D6D",
-        "pale-blue": "#F5F6FF",
-        "white-400": "rgba(255, 255, 255, 0.80)"
+        'primary': "#F0F4FF",
+        "coral-red": "#FF4B36",
+        "slate-gray": "#4A5568",
+        "pale-blue": "#EDF2FF",
+        "white-400": "rgba(255, 255, 255, 0.85)",
+        "accent-teal": "#38B2AC",
+        "accent-indigo": "#667EEA",
+        "accent-purple": "#9F7AEA",
+        "accent-orange": "#ED8936",
+        "dark-blue": "#2D3748",
+        "light-gray": "#F7FAFC",
+        "success": "#48BB78",
+        "warning": "#F6AD55",
+        "error": "#F56565",
+        "info": "#4299E1",
+        // Dark mode colors
+        'dark-primary': "#1A202C",
+        'dark-secondary': "#2D3748",
+        'dark-accent': "#4A5568",
+        'dark-text': "#E2E8F0",
+        'dark-muted': "#A0AEC0",
       },
       boxShadow: {
         '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)',

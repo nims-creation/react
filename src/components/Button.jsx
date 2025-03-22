@@ -6,6 +6,7 @@ const Button = ({
     borderColor,
     fullWidth,
     onClick,
+    variant = "primary",
     size = "default"
   }) => {
     const getSizeClasses = () => {
@@ -19,15 +20,27 @@ const Button = ({
       }
     };
 
+    const getVariantClasses = () => {
+      switch (variant) {
+        case "secondary":
+          return "bg-accent-indigo text-white border-accent-indigo";
+        case "outline":
+          return "bg-transparent text-slate-gray border-slate-gray hover:bg-slate-gray hover:text-white";
+        case "accent":
+          return "bg-accent-teal text-white border-accent-teal";
+        case "custom":
+          return `${backgroundColor || ''} ${textColor || ''} ${borderColor || ''}`;
+        default:
+          return "bg-coral-red text-white border-coral-red";
+      }
+    };
+
     return (
       <button
         onClick={onClick}
         className={`flex justify-center items-center gap-2 ${getSizeClasses()} border font-montserrat leading-none
-        ${
-          backgroundColor
-            ? `${backgroundColor} ${textColor} ${borderColor}`
-            : "bg-coral-red text-white border-coral-red"
-        } rounded-full ${fullWidth ? "w-full" : ""} hover:opacity-90 transition-all duration-300 active:scale-95`}
+        ${variant === 'custom' ? getVariantClasses() : getVariantClasses()}
+        rounded-full ${fullWidth ? "w-full" : ""} hover:shadow-lg transition-all duration-300 active:scale-95`}
       >
         {label}
   
@@ -35,7 +48,7 @@ const Button = ({
           <img
             src={iconURL}
             alt='arrow right icon'
-            className='ml-2 rounded-full bg-white w-5 h-5'
+            className='ml-2 rounded-full w-5 h-5 object-contain'
           />
         )}
       </button>
